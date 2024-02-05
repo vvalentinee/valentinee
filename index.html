@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Courier New', monospace;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .message {
+      color: red;
+    }
+  #heart { 
+      display: none;
+      animation: pulseHeart 1s ease-in-out infinite;
+    }
+
+    @keyframes pulseHeart {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  #noBtn {
+      position: absolute;
+      animation: moveButton 5s infinite linear;
+    }
+
+    @keyframes moveButton {
+      0% {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      25% {
+        top: 10%;
+        left: 10%;
+        transform: translate(-10%, -10%);
+      }
+      50% {
+        top: 90%;
+        left: 90%;
+        transform: translate(10%, 10%);
+      }
+      75% {
+        top: 10%;
+        left: 90%;
+        transform: translate(10%, -10%);
+      }
+      100% {
+        top: 90%;
+        left: 10%;
+        transform: translate(-10%, 10%);
+      }
+    }
+  </style>
+
+</head>
+<center>
+<body>
+<img class="h-[200px]" src="https://gifdb.com/images/high/cute-love-bear-roses-ou7zho5oosxnpo6k.gif"/>
+
+  <div class="container">
+    <h2 style="color:#f44336">GHALO, WILL YOU BE MY VALENTINE?</h2>
+   <button id="yesBtn" style="background-color: #f44336;  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px; 
+  margin: 4px 2px;
+  cursor: pointer;">Yes</button>
+    <button id="noBtn" style="background-color: #f44336;  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;">No</button>
+    <p id="message"></p>
+<div id="heart"></div> 
+    <p id="message"></p>
+  </div>
+
+   <script> 
+    var yesButton = document.getElementById("yesBtn");
+    var noButton = document.getElementById("noBtn");
+    var heart = document.getElementById("heart");
+    var message = document.getElementById("message");
+
+    yesButton.addEventListener("click", function() {
+      heart.innerHTML = '<img src="https://i.pinimg.com/736x/c1/cd/64/c1cd64f0f65f2c5e978cf6eb48b3e166.jpg" alt="Jumping Teddy Bear Holding a Heart">';
+      heart.style.display = "block";
+      message.innerHTML = "YAAAAAYYY!! &lt;3";
+    });
+
+    noButton.addEventListener("click", function() {
+      heart.style.display = "none";
+      message.innerHTML = "Wrong answer!";
+    });
+  </script>
+</center>
+</body>
+</html>
